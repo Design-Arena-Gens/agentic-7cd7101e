@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  color-scheme: light;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+input[type="range"] {
+  accent-color: #0284c7;
+}
+
+.flow-stream {
+  border-radius: 9999px;
+  filter: drop-shadow(0 20px 30px rgba(14, 165, 233, 0.25));
+  animation: flowPulse 1.4s ease-in-out infinite;
+}
+
+.flow-splash {
+  animation: splashGlow 1.2s ease-in-out infinite;
+}
+
+@keyframes flowPulse {
+  0%,
+  100% {
+    transform: translate(-50%, 0) scaleY(0.95);
+  }
+  50% {
+    transform: translate(-50%, 4px) scaleY(1.05);
+  }
+}
+
+@keyframes splashGlow {
+  0%,
+  100% {
+    opacity: 0.35;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
